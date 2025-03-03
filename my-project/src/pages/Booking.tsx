@@ -2,9 +2,9 @@ import BookingForm from "../components/BookingForm";
 import FormBtn from "../components/FormBtn";
 import { BOOKING_PARAGRAPH } from "../constans";
 
-function Contact() {
+function Booking() {
   return (
-    <section className="container mx-auto px-8">
+    <section className="container mx-auto px-8" id="booking">
       <h1
         id="#Services"
         className="text-start heading-1 uppercase leading-10 tracking-widest mt-20 mb-20"
@@ -27,4 +27,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Booking;

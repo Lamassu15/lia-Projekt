@@ -2,7 +2,7 @@ import { ABOUT } from "../constans";
 
 function About() {
   return (
-    <section>
+    <section id="about">
       {ABOUT.map((about, index) => (
         <div key={index}>
           <h1
@@ -32,7 +32,13 @@ function About() {
             </div>
             <div className="w-full h-96 lg:w-1/2 bg-white text-black flex flex-col items-center justify-center text-center gap-10 tracking-widest">
               <h3 className="heading-3">{about.ESTABLISHED}</h3>
-              <p className="max-w-prose paragraph">{about.TEXT}</p>
+              <ul className="list-disc text-start">
+                {about.openingHours.map((hour, hourIndex) => (
+                  <li key={hourIndex} className="mb-1">
+                    {hour}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

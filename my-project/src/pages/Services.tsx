@@ -3,7 +3,7 @@ import { SERVICES_PARAGRAPH } from "../constans/index";
 
 function Services() {
   return (
-    <section className="container mx-auto px-8">
+    <section className="container mx-auto px-8" id="services">
       <h1
         id="#Services"
         className="text-start heading-1 font-bold uppercase leading-10 tracking-widest mt-20 mb-20"

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Squash as Hamburger } from 'hamburger-react';
-import Logo from '../assets/Logo.png';
+import React, { useState } from "react";
+import { Squash as Hamburger } from "hamburger-react";
+import Logo from "./Logo";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,6 +9,22 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Navigationslänkar för större skärmar
+  const leftLinks = [
+    { href: "/", text: "Home" },
+    { href: "#about", text: "About" },
+    { href: "#team", text: "Team" },
+  ];
+
+  const rightLinks = [
+    { href: "#services", text: "Services" },
+    { href: "#contact", text: "Contact" },
+    { href: "#booking", text: "Book now" },
+  ];
+
+  // Navigationslänkar för mobilmenyn
+  const mobileLinks = [...leftLinks, ...rightLinks];
+
   return (
     <header className="bg-primary">
       <nav className="container mx-auto px-8" aria-label="Main Navigation">
@@ -16,51 +32,61 @@ function Header() {
         <div className="grid grid-cols-[1fr_auto_1fr] max-lg:grid-cols-2 items-center font-bold uppercase">
           {/* Vänstra navigeringslänkar (visas endast på större skärmar) */}
           <div className="flex justify-end gap-4 max-lg:hidden">
-            <a href="/">Home</a>
-            <a href="#about">About</a>
-            <a href="index.html">Team</a>
+            {leftLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="hover:text-gray-400 transition-colors"
+              >
+                {link.text}
+              </a>
+            ))}
           </div>
 
-          {/* Logotyp i mitten */}
-          <div className="flex justify-center">
-            <a href="index.html">
-              <img className="w-fit h-[120px] object-cover" src={Logo} alt="Company Logo" />
-            </a>
-          </div>
+          <Logo></Logo>        
 
           {/* Högra navigeringslänkar (visas endast på större skärmar) */}
           <div className="flex justify-start gap-4 max-lg:hidden">
-            <a href="index.html">Services</a>
-            <a href="index.html">Contact</a>
-            <a href="index.html">Book now</a>
+            {rightLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="hover:text-gray-400 transition-colors"
+              >
+                {link.text}
+              </a>
+            ))}
           </div>
 
           {/* Hamburgarikon för mindre skärmar */}
-          <div className="lg:hidden flex justify-end">
+          <div className="lg:hidden flex justify-end relative">
             <Hamburger
               toggled={isMenuOpen}
               toggle={toggleMenu}
-              size={24}
+              size={40}
               color="#FFFFFF" // Vit färg på ikonen
             />
+
+            {/* Dropdown-meny under knappen */}
+            {isMenuOpen && (
+              <div className="absolute top-full right-0 mt-2 w-48 backdrop-blur-2xl shadow-lg rounded-lg overflow-hidden z-50">
+                <ul className="space-y-2 p-2">
+                  {mobileLinks.map((link, index) => (
+                    <li key={index}>
+                      <a
+                        href={link.href}
+                        className="block text-white hover:bg-gray-700 transition-colors px-4 py-2 rounded"
+                        onClick={toggleMenu}
+                      >
+                        {link.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
-
-        {/* Dropdown-meny för mindre skärmar */}
-        {isMenuOpen && (
-          <div className="lg:hidden absolute top-[120px] right-0 w-full bg-primary z-50">
-            <div className="p-8">
-              <ul className="space-y-4">
-                <li><a href="/" className="block text-white hover:text-gray-400" onClick={toggleMenu}>Home</a></li>
-                <li><a href="#about" className="block text-white hover:text-gray-400" onClick={toggleMenu}>About</a></li>
-                <li><a href="index.html" className="block text-white hover:text-gray-400" onClick={toggleMenu}>Team</a></li>
-                <li><a href="index.html" className="block text-white hover:text-gray-400" onClick={toggleMenu}>Services</a></li>
-                <li><a href="index.html" className="block text-white hover:text-gray-400" onClick={toggleMenu}>Contact</a></li>
-                <li><a href="index.html" className="block text-white hover:text-gray-400" onClick={toggleMenu}>Book now</a></li>
-              </ul>
-            </div>
-          </div>
-        )}
       </nav>
     </header>
   );

@@ -3,7 +3,7 @@ import { contactUsHeading, contactUsParagraph } from "../constans/index";
 
 function Contact() {
   return (
-    <section className="container mx-auto px-8 mb-20">
+    <section className="container mx-auto px-8 mb-20" id="contact">
       <h1
         id="#Contact"
         className="text-start heading-1 uppercase leading-10 tracking-widest mt-20 mb-20"

@@ -24,6 +24,11 @@ export const ABOUT = [
   {
     ESTABLISHED: `ESTABLISHED 2015`,
     TEXT: `Old school barbering. Our barbershop is more than just a hair salon. You come here for a moment of relaxation, a good cup of coffee, a chat & when the session is over – a new haircut, a clean shave, or maybe just a refresher! With care, precision, and with love for the manual labor that the profession requires, we work hard to fulfill your requirements & wishes.`,
+    openingHours: [
+      "Monday – Friday: 10:00 AM – 7:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: Closed",
+    ],
   },
 ];
 
@@ -106,10 +111,5 @@ export const contactUsInfo = [
     address: "6/57 Smart St, Fairfield NSW 2165, Australia",
     number: "+61 469 874 644",
     email: "Thebrotherscut@gmail.com",
-    openingHours: [
-      "Monday – Friday: 10:00 AM – 7:00 PM",
-      "Saturday: 9:00 AM – 5:00 PM",
-      "Sunday: Closed",
-    ],
   },
 ];

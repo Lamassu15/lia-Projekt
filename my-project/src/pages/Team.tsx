@@ -4,7 +4,7 @@ import { TEAM_H2, TEAM_PARAGRAPH } from "../constans";
 function Team() {
   return (
     <>
-      <section className="container mx-auto px-8 ">
+      <section className="container mx-auto px-8" id="team">
         <h1 className="text-start heading-1 uppercase leading-10 tracking-widest mt-20 mb-20">
           team
         </h1>
