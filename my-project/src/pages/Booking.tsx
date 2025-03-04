@@ -1,5 +1,4 @@
 import BookingForm from "../components/BookingForm";
-import FormBtn from "../components/FormBtn";
 import { BOOKING_PARAGRAPH } from "../constans";
 
 function Booking() {
@@ -17,10 +16,7 @@ function Booking() {
           <p className="paragraph">{BOOKING_PARAGRAPH}</p>
         </div>
         <div className="w-full">
-          <form action="" className="flex flex-col gap-4">
-            <BookingForm></BookingForm>
-            <FormBtn></FormBtn>
-          </form>
+          <BookingForm></BookingForm>
         </div>
       </div>
     </section>
