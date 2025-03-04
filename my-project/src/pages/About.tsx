@@ -31,7 +31,7 @@ function About() {
               />
             </div>
             <div className="w-full h-96 lg:w-1/2 bg-white text-black flex flex-col items-center justify-center text-center gap-10 tracking-widest">
-              <h3 className="heading-3">{about.ESTABLISHED}</h3>
+              <h3 className="heading-3 uppercase">Opening hours</h3>
               <ul className="list-disc text-start">
                 {about.openingHours.map((hour, hourIndex) => (
                   <li key={hourIndex} className="mb-1">

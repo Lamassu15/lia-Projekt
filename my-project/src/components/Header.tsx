@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import Logo from "./Logo";
 
@@ -69,7 +69,7 @@ function Header() {
 
             {/* Dropdown-meny under knappen */}
             {isMenuOpen && (
-              <div className="absolute top-full right-0 mt-2 w-48 backdrop-blur-2xl shadow-lg rounded-lg overflow-hidden z-50">
+              <div className="absolute top-full right-0 mt-2 w-48 bg-slate-800 z-50 rounded">
                 <ul className="space-y-2 p-2">
                   {mobileLinks.map((link, index) => (
                     <li key={index}>
